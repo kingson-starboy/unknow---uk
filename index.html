@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nova Studio — Premium digital experience and product engineering studio. We build high-impact web applications, immersive digital products, and future-ready brands.">
+  <meta name="theme-color" content="#080C16">
+  <title>Nova Studio | Digital Product & Web Development Studio</title>
+
+  <!-- Google Fonts Preconnect & Inter / Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%230b0f19'/><path d='M16 6 L22 16 L16 26 L10 16 Z' fill='%238B5CF6'/><circle cx='16' cy='16' r='4' fill='%2300F2FE'/></svg>">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-3" aria-hidden="true"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Nova Studio Homepage">
+        <span class="logo-symbol" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="url(#logo-grad-bg)"/>
+            <path d="M18 7L26 18L18 29L10 18L18 7Z" fill="url(#logo-grad-core)"/>
+            <circle cx="18" cy="18" r="4.5" fill="#00F2FE"/>
+            <defs>
+              <linearGradient id="logo-grad-bg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1E163B"/>
+                <stop offset="1" stop-color="#0E1E38"/>
+              </linearGradient>
+              <linearGradient id="logo-grad-core" x1="10" y1="7" x2="26" y2="29" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#A78BFA"/>
+                <stop offset="1" stop-color="#7C3AED"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">Nova<span class="text-accent">Studio</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Work</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#process" class="nav-link">Process</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action & Mobile Toggle -->
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-outline btn-sm header-cta">Start a Project</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="brand-logo">
+          <span class="logo-symbol">
+            <svg viewBox="0 0 36 36" fill="none" width="28" height="28">
+              <rect width="36" height="36" rx="8" fill="#1E163B"/>
+              <path d="M18 8L25 18L18 28L11 18L18 8Z" fill="#A78BFA"/>
+              <circle cx="18" cy="18" r="4" fill="#00F2FE"/>
+            </svg>
+          </span>
+          <span class="logo-text">Nova<span class="text-accent">Studio</span></span>
+        </div>
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="drawer-nav">
+        <li><a href="#hero" class="drawer-link">Home</a></li>
+        <li><a href="#services" class="drawer-link">Services</a></li>
+        <li><a href="#projects" class="drawer-link">Work</a></li>
+        <li><a href="#about" class="drawer-link">About</a></li>
+        <li><a href="#process" class="drawer-link">Process</a></li>
+        <li><a href="#contact" class="drawer-link">Contact</a></li>
+      </ul>
+      <div class="drawer-footer">
+        <a href="#contact" class="btn btn-primary btn-block drawer-cta">Get a Proposal</a>
+        <p class="drawer-contact-hint">hello@novastudio.design</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="section hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge hero-badge">
+            <span class="badge-dot"></span>
+            <span>Available for new projects &middot; Q4 2026</span>
+          </div>
+          <h1 class="hero-title">
+            Architecting <span class="gradient-text">digital experiences</span> that command attention.
+          </h1>
+          <p class="hero-subtitle">
+            Nova Studio is a boutique creative engineering studio. We combine high-velocity full-stack development, brand architecture, and fluid UI design to propel ambitious businesses forward.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary btn-lg">
+              Explore Our Work
+              <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary btn-lg">Schedule Discovery</a>
+          </div>
+
+          <!-- Trust metrics -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-number">99.4%</span>
+              <span class="metric-label">On-time Delivery</span>
+            </div>
+            <div class="metric-divider" aria-hidden="true"></div>
+            <div class="metric-item">
+              <span class="metric-number">48+</span>
+              <span class="metric-label">Products Shipped</span>
+            </div>
+            <div class="metric-divider" aria-hidden="true"></div>
+            <div class="metric-item">
+              <span class="metric-number">$50M+</span>
+              <span class="metric-label">Client Funding Raised</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase Component -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="preview-card-wrap">
+            <div class="preview-glow"></div>
+            <div class="preview-card">
+              <div class="preview-card-topbar">
+                <div class="window-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <div class="window-title">nova-system // production-v3.8.sh</div>
+                <div class="window-status"><span class="pulse-indicator"></span>LIVE</div>
+              </div>
+              <div class="preview-code-body">
+                <div class="code-line"><span class="c-purple">import</span> { StudioEngine, MotionCore } <span class="c-purple">from</span> <span class="c-teal">'@nova/core'</span>;</div>
+                <div class="code-line"><span class="c-purple">const</span> studio = <span class="c-blue">new</span> <span class="c-teal">StudioEngine</span>({</div>
+                <div class="code-line indent"><span class="c-dim">performance:</span> <span class="c-purple">'100/100'</span>,</div>
+                <div class="code-line indent"><span class="c-dim">experience:</span> <span class="c-teal">'immersive'</span>,</div>
+                <div class="code-line indent"><span class="c-dim">stack:</span> [<span class="c-teal">'React'</span>, <span class="c-teal">'TypeScript'</span>, <span class="c-teal">'WebGL'</span>],</div>
+                <div class="code-line indent"><span class="c-dim">accessibility:</span> <span class="c-purple">'WCAG_AAA'</span></div>
+                <div class="code-line">});</div>
+                <div class="code-line"><span class="c-comment">// Delivering high-impact digital products</span></div>
+                <div class="code-line"><span class="c-purple">await</span> studio.<span class="c-blue">launchTransformativeExperience</span>();</div>
+              </div>
+              <div class="preview-floating-badge float-badge-1">
+                <div class="badge-icon">&#10003;</div>
+                <div class="badge-content">
+                  <strong>Zero Technical Debt</strong>
+                  <span>Clean Architecture</span>
+                </div>
+              </div>
+              <div class="preview-floating-badge float-badge-2">
+                <div class="badge-icon-teal">&#9733;</div>
+                <div class="badge-content">
+                  <strong>Sub-second Latency</strong>
+                  <span>Blazing Fast Web Core</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT LOGOS TICKER -->
+    <section class="clients-strip" aria-label="Trusted client partners">
+      <div class="container">
+        <p class="clients-title">TRUSTED BY INNOVATIVE FOUNDERS & SCALING ENTERPRISES</p>
+        <div class="clients-grid">
+          <div class="client-logo"><span>AETHER</span> LABS</div>
+          <div class="client-logo"><span>QUANTUM</span>.AI</div>
+          <div class="client-logo"><span>PULSE</span> DYNAMICS</div>
+          <div class="client-logo"><span>VERTEX</span> FINTECH</div>
+          <div class="client-logo"><span>SYNAPSE</span> OS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge">Core Capabilities</div>
+          <h2 class="section-title">Engineered for impact & aesthetic precision</h2>
+          <p class="section-subtitle">
+            From strategic concept to production deployment, we bridge modern design philosophies with resilient engineering.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service Card 1 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="service-title">Full-Stack Web Engineering</h3>
+            <p class="service-desc">
+              High-performance web applications built with modern frontend frameworks, scalable cloud architectures, and strict typing.
+            </p>
+            <ul class="service-features">
+              <li>TypeScript & modern frameworks</li>
+              <li>Microservices & API integrations</li>
+              <li>Edge computing & serverless scale</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 2 -->
+          <article class="service-card featured">
+            <div class="featured-tag">Popular</div>
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+            </div>
+            <h3 class="service-title">UI/UX & Product Design</h3>
+            <p class="service-desc">
+              Human-centered digital interfaces, interactive prototypes, and design systems designed to delight users and drive conversion.
+            </p>
+            <ul class="service-features">
+              <li>Design sprint workshops & wireframes</li>
+              <li>Figma-first design systems</li>
+              <li>Micro-animations & interactive states</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Enterprise Design Systems</h3>
+            <p class="service-desc">
+              Modular, accessible component libraries that align development and design teams, drastically slashing time to market.
+            </p>
+            <ul class="service-features">
+              <li>Accessible tokens (WCAG compliant)</li>
+              <li>Storybook component documentation</li>
+              <li>Cross-platform consistency</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 4 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Performance & Core Web Vitals</h3>
+            <p class="service-desc">
+              Ruthless optimization for sub-second loads, perfect Lighthouse scores, search rankings, and rock-solid reliability under peak load.
+            </p>
+            <ul class="service-features">
+              <li>Lighthouse 95+ score optimization</li>
+              <li>Asset compression & critical CSS</li>
+              <li>Semantic technical SEO foundations</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 5 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">AI & Smart Workflow Integrations</h3>
+            <p class="service-desc">
+              Leveraging intelligent conversational interfaces, automated data pipelines, and custom AI agents directly within web products.
+            </p>
+            <ul class="service-features">
+              <li>LLM integration & vector search</li>
+              <li>Agentic automation backends</li>
+              <li>Secure API orchestration</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 6 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Mobile-First Applications</h3>
+            <p class="service-desc">
+              Responsive PWA and cross-platform native experiences optimized for thumb-friendly navigation and gesture interactions.
+            </p>
+            <ul class="service-features">
+              <li>Offline-capable Progressive Web Apps</li>
+              <li>Native feel & gesture triggers</li>
+              <li>Fluid responsive adaptive layout</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SHOWCASE SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge">Featured Work</div>
+          <h2 class="section-title">Selected projects & flagship case studies</h2>
+          <p class="section-subtitle">
+            Explore our portfolio of cutting-edge web applications, brand identities, and high-conversion software platforms.
+          </p>
+
+          <!-- Filter Tabs -->
+          <div class="project-filters" role="tablist" aria-label="Filter Projects">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Work</button>
+            <button class="filter-btn" data-filter="webapp" role="tab" aria-selected="false">Web Apps</button>
+            <button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Branding</button>
+            <button class="filter-btn" data-filter="saas" role="tab" aria-selected="false">SaaS & AI</button>
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Project 1 -->
+          <article class="project-card" data-category="webapp saas" data-project-id="1">
+            <div class="project-media">
+              <div class="project-mockup mockup-prism">
+                <div class="mockup-header">
+                  <span class="m-dot"></span><span class="m-dot"></span><span class="m-dot"></span>
+                  <span class="m-url">prism-cloud.io/analytics</span>
+                </div>
+                <div class="mockup-screen">
+                  <div class="mockup-stat-row">
+                    <div class="m-stat-box"><span class="m-label">Active Users</span><span class="m-val">+142%</span></div>
+                    <div class="m-stat-box"><span class="m-label">Throughput</span><span class="m-val">4.8 GB/s</span></div>
+                  </div>
+                  <div class="mockup-graph-lines">
+                    <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span><span class="bar b5"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm view-project-btn" data-project="1">View Details</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Web App</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">Analytics</span>
+              </div>
+              <h3 class="project-title">Prism Data Cloud</h3>
+              <p class="project-desc">
+                High-concurrency streaming telemetry platform engineered with real-time WebSockets and sub-millisecond query rendering.
+              </p>
+              <div class="project-meta">
+                <span class="client-name">Client: Prism Technologies</span>
+                <button class="btn-text view-project-btn" data-project="1">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-category="branding" data-project-id="2">
+            <div class="project-media">
+              <div class="project-mockup mockup-aurora">
+                <div class="aurora-brand-visual">
+                  <div class="aurora-circle"></div>
+                  <span class="brand-monogram">AURA</span>
+                  <span class="brand-sub">Nordic Soundworks</span>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm view-project-btn" data-project="2">View Details</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Branding</span>
+                <span class="tag">Design System</span>
+                <span class="tag">Typography</span>
+              </div>
+              <h3 class="project-title">Aura Audio Rebrand</h3>
+              <p class="project-desc">
+                Complete sensory brand system, bespoke typography package, and interactive acoustic product showcase for luxury audiophiles.
+              </p>
+              <div class="project-meta">
+                <span class="client-name">Client: Aura Soundworks</span>
+                <button class="btn-text view-project-btn" data-project="2">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-category="saas" data-project-id="3">
+            <div class="project-media">
+              <div class="project-mockup mockup-cortex">
+                <div class="mockup-header">
+                  <span class="m-dot"></span><span class="m-dot"></span><span class="m-dot"></span>
+                  <span class="m-url">cortex.ai/studio</span>
+                </div>
+                <div class="mockup-ai-chat">
+                  <div class="ai-msg prompt">Summarize Q3 financial trends...</div>
+                  <div class="ai-msg response">
+                    <span class="ai-dot"></span> Model output: Revenue increased 34% with ARR reaching $12.4M...
+                  </div>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm view-project-btn" data-project="3">View Details</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">SaaS & AI</span>
+                <span class="tag">Python</span>
+                <span class="tag">LLM Orchestration</span>
+              </div>
+              <h3 class="project-title">Cortex Intelligent Co-pilot</h3>
+              <p class="project-desc">
+                Autonomous knowledge workspace integrating custom generative AI workflows and vector retrieval for enterprise finance teams.
+              </p>
+              <div class="project-meta">
+                <span class="client-name">Client: Cortex Intelligence</span>
+                <button class="btn-text view-project-btn" data-project="3">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-category="webapp" data-project-id="4">
+            <div class="project-media">
+              <div class="project-mockup mockup-velocity">
+                <div class="mockup-header">
+                  <span class="m-dot"></span><span class="m-dot"></span><span class="m-dot"></span>
+                  <span class="m-url">velocity-pay.com</span>
+                </div>
+                <div class="mockup-card-graphic">
+                  <div class="crypto-card">
+                    <div class="card-chip"></div>
+                    <div class="card-num">&bull;&bull;&bull;&bull; 4892</div>
+                    <div class="card-balance">$84,230.00</div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm view-project-btn" data-project="4">View Details</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Web App</span>
+                <span class="tag">FinTech</span>
+                <span class="tag">Security</span>
+              </div>
+              <h3 class="project-title">Velocity Global Payments</h3>
+              <p class="project-desc">
+                Cross-border financial portal supporting multicurrency settlements, fraud protection telemetry, and compliant card issuance.
+              </p>
+              <div class="project-meta">
+                <span class="client-name">Client: Velocity Financial</span>
+                <button class="btn-text view-project-btn" data-project="4">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT DETAILS MODAL -->
+    <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close project modal">&times;</button>
+        <div class="modal-body" id="modalBody">
+          <!-- Dynamic injected content -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <div class="badge">Who We Are</div>
+            <h2 class="section-title">We craft digital realities with engineering rigour</h2>
+            <p class="about-lead">
+              Founded in 2023, Nova Studio was created on a single belief: digital software should be visually stunning without sacrificing structural speed, accessibility, or maintainability.
+            </p>
+            <p class="about-text">
+              We operate as a high-caliber multidisciplinary squad of senior engineers, product designers, and brand strategists. Rather than bloated teams and bureaucratic sprints, we work directly with founders and product leaders to ship impactful digital products in record time.
+            </p>
+
+            <div class="values-list">
+              <div class="value-item">
+                <div class="value-icon">&#10024;</div>
+                <div>
+                  <h4 class="value-title">Obsessive Polish</h4>
+                  <p class="value-desc">Every pixel, typography scale, and easing curve is calibrated for aesthetic distinction.</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-icon">&#9889;</div>
+                <div>
+                  <h4 class="value-title">Zero Friction Speed</h4>
+                  <p class="value-desc">Modular, clean codebases designed for effortless maintenance, scale, and longevity.</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-icon">&#128274;</div>
+                <div>
+                  <h4 class="value-title">Accessible by Default</h4>
+                  <p class="value-desc">Inclusive design conforming with WCAG AA/AAA guidelines across devices and viewports.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Highlights / Stats Cards -->
+          <div class="about-stats-container">
+            <div class="about-card-stat">
+              <span class="stat-highlight">100%</span>
+              <span class="stat-title">In-House Craft</span>
+              <p class="stat-detail">No outsourcing or white-label contractors. You collaborate straight with senior builders.</p>
+            </div>
+            <div class="about-card-stat">
+              <span class="stat-highlight">4.9/5</span>
+              <span class="stat-title">Client Satisfaction</span>
+              <p class="stat-detail">Over 40+ long-term agency and scale-up partner relationships across the globe.</p>
+            </div>
+            <div class="about-card-stat">
+              <span class="stat-highlight">&lt; 30ms</span>
+              <span class="stat-title">Interaction Budgets</span>
+              <p class="stat-detail">Fluid responsiveness and zero jank on all user interactions and micro-animations.</p>
+            </div>
+            <div class="about-card-stat highlight-teal">
+              <span class="stat-highlight">4 Weeks</span>
+              <span class="stat-title">Average MVP Delivery</span>
+              <p class="stat-detail">From greenfield concept to production-ready deployed MVP in record time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge">Our Approach</div>
+          <h2 class="section-title">A transparent, four-phase delivery cycle</h2>
+          <p class="section-subtitle">
+            How we take your product vision from raw requirements to an elevated, market-ready experience.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-badge">01</div>
+            <h3 class="step-title">Discovery & Strategy</h3>
+            <p class="step-desc">
+              We audit your market landscape, target personas, technical requirements, and core KPIs to shape a unified roadmap.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-badge">02</div>
+            <h3 class="step-title">Design & Prototyping</h3>
+            <p class="step-desc">
+              Rapid wireframing, high-fidelity visual mockups, and clickable prototypes to test user flows before writing production code.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-badge">03</div>
+            <h3 class="step-title">Agile Engineering</h3>
+            <p class="step-desc">
+              Full-stack implementation using modern clean code patterns, continuous integration, unit testing, and weekly staging previews.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-badge">04</div>
+            <h3 class="step-title">Launch & Scale</h3>
+            <p class="step-desc">
+              Lighthouse optimization, DNS and SSL configuration, analytics wiring, comprehensive handover, and post-launch tuning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section faq-section" id="faq">
+      <div class="container max-w-narrow">
+        <div class="section-header text-center">
+          <div class="badge">Common Questions</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know about working with Nova Studio.</p>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What is your typical project timeline?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                Most web applications and design systems take between 4 to 10 weeks depending on complexity. Early stage MVPs can be fast-tracked in 3 to 4 weeks. We provide clear milestone schedules during discovery.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>How do you handle backend integrations for websites?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                We build headless and full-stack solutions. For static sites and marketing platforms, we seamlessly wire forms and dynamic data to serverless services (Formspree, Resend, Supabase, Firebase) or custom Node/Python REST/GraphQL APIs.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Do you offer ongoing support after launch?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                Yes. We offer flexible post-launch retainer packages covering proactive performance monitoring, security patching, A/B testing, and feature expansions.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Will our in-house team be able to maintain the code?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                Absolutely. We maintain clean folder architecture, semantic markup, zero undocumented magic, comprehensive README guides, and structured code comments so any developer can immediately step in.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-wrapper">
+          <!-- Contact Info Column -->
+          <div class="contact-info">
+            <div class="badge">Get in Touch</div>
+            <h2 class="contact-heading">Let's build something extraordinary together.</h2>
+            <p class="contact-desc">
+              Have an upcoming product launch, redesign, or engineering challenge? Tell us about your vision and we'll prepare a custom roadmap and proposal within 24 hours.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <div class="detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <span class="detail-label">Direct Inquiries</span>
+                  <a href="mailto:hello@novastudio.design" class="detail-val">hello@novastudio.design</a>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <span class="detail-label">Response Time</span>
+                  <span class="detail-val">Guaranteed within 24 business hours</span>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <span class="detail-label">Studio Location</span>
+                  <span class="detail-val">San Francisco, CA &middot; Remote Worldwide</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transparency notice regarding backend integration -->
+            <div class="integration-notice">
+              <div class="notice-icon">&#8505;</div>
+              <p class="notice-text">
+                <strong>Developer Note:</strong> This form features client-side validation. To receive live submissions in production, connect your action endpoint to an email API or form handler (e.g., Formspree, Resend, or your backend server).
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-box">
+            <form id="contactForm" class="contact-form" novalidate>
+              <!-- Alert container for form-wide messages -->
+              <div class="form-alert" id="formAlert" role="alert" aria-live="polite"></div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName" class="form-label">Your Name <span class="required">*</span></label>
+                  <input type="text" id="fullName" name="name" class="form-input" placeholder="e.g. Alex Morgan" autocomplete="name" required>
+                  <span class="error-msg" id="nameError" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="alex@company.com" autocomplete="email" required>
+                  <span class="error-msg" id="emailError" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="serviceType" class="form-label">Service Required <span class="required">*</span></label>
+                  <select id="serviceType" name="service" class="form-select" required>
+                    <option value="" disabled selected>Select a primary capability</option>
+                    <option value="web-dev">Full-Stack Web Engineering</option>
+                    <option value="ui-ux">UI/UX & Product Design</option>
+                    <option value="design-system">Enterprise Design System</option>
+                    <option value="perf-seo">Performance & Core Web Vitals</option>
+                    <option value="ai-integration">AI & Smart Workflow Integration</option>
+                    <option value="other">Other / Custom Exploration</option>
+                  </select>
+                  <span class="error-msg" id="serviceError" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="budget" class="form-label">Estimated Budget</label>
+                  <select id="budget" name="budget" class="form-select">
+                    <option value="" disabled selected>Select anticipated range</option>
+                    <option value="10k-25k">$10k &ndash; $25k</option>
+                    <option value="25k-50k">$25k &ndash; $50k</option>
+                    <option value="50k-100k">$50k &ndash; $100k</option>
+                    <option value="100k+">$100k+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Project Overview <span class="required">*</span></label>
+                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Briefly describe your objectives, target timeline, and any key links..." required></textarea>
+                <div class="textarea-footer">
+                  <span class="error-msg" id="messageError" aria-live="polite"></span>
+                  <span class="char-count" id="charCount">0 / 1000</span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                <span class="btn-text-default">Send Project Brief</span>
+                <span class="btn-text-loading hidden">Sending Brief...</span>
+                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                  <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+                </svg>
+              </button>
+
+              <p class="form-privacy">
+                We respect your confidentiality. We will never share your information or send spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PROFESSIONAL FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="#hero" class="brand-logo" aria-label="Nova Studio Homepage">
+            <span class="logo-symbol" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none" width="28" height="28">
+                <rect width="36" height="36" rx="8" fill="#1E163B"/>
+                <path d="M18 8L25 18L18 28L11 18L18 8Z" fill="#A78BFA"/>
+                <circle cx="18" cy="18" r="4" fill="#00F2FE"/>
+              </svg>
+            </span>
+            <span class="logo-text">Nova<span class="text-accent">Studio</span></span>
+          </a>
+          <p class="footer-tagline">
+            Next-generation digital product engineering and brand systems studio. Built with precision for ambitious brands.
+          </p>
+          <div class="social-links" aria-label="Social Media Links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Nova Studio on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Nova Studio on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Nova Studio on X / Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Nova Studio on Dribbble">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm10.138 10.742c-.223-.034-2.456-.372-4.908.435-.349-.801-.728-1.595-1.134-2.373 2.164-1.137 3.96-2.614 4.168-2.791 1.171 1.339 1.874 3.09 1.874 4.729zm-3.344-6.079c-.214.179-1.897 1.545-3.992 2.62-1.39-2.502-2.946-4.593-3.076-4.767 1.954-.783 4.164-.693 7.068 2.147zm-8.895-2.222c.137.181 1.71 2.288 3.097 4.809-2.88 1.01-5.836 1.157-6.22 1.172.906-2.585 2.871-4.664 5.377-5.981zm-6.073 7.423c.361-.013 3.528-.157 6.643-1.285.385.736.744 1.488 1.077 2.247-3.957 1.353-7.514 4.298-7.72 4.471-.444-1.637-.687-3.411-.687-5.433zm3.033 11.233c.189-.157 3.398-2.791 7.273-4.045 1.065 2.684 1.554 5.253 1.634 5.719-3.418 1.258-6.945-.292-8.907-1.674zm10.36 1.096c-.08-.432-.544-2.878-1.564-5.467 2.261-.837 4.269-.516 4.494-.477-.282 2.456-1.355 4.582-2.93 5.944z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-menu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#about">About Studio</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-menu">
+            <li><a href="#services">Web Engineering</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#services">Design Systems</a></li>
+            <li><a href="#services">Performance & SEO</a></li>
+            <li><a href="#services">AI Integrations</a></li>
+            <li><a href="#services">Mobile Optimization</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h4 class="footer-heading">Studio Dispatch</h4>
+          <p class="newsletter-desc">
+            Curated insights on web performance, modern typography, and emerging UI paradigms. Sent bi-weekly.
+          </p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <div class="newsletter-input-wrap">
+              <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-submit" aria-label="Subscribe to newsletter">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </button>
+            </div>
+            <div class="newsletter-feedback" id="newsletterFeedback" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">
+          &copy; <span id="yearSpan">2026</span> Nova Studio LLC. All rights reserved. Built with precision & craft.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#hero">Privacy Policy</a>
+          <span class="bullet-divider">&bull;</span>
+          <a href="#hero">Terms of Service</a>
+          <span class="bullet-divider">&bull;</span>
+          <a href="#hero">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top of page">
+    <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+      <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+
+  <!-- Interactive Toast Notification Component -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="toast-icon" id="toastIcon">&#10003;</div>
+    <div class="toast-message" id="toastMessage">Success notification message</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
