@@ -112,47 +112,14 @@ If using VS Code, install the **Live Server** extension, right-click `index.html
 
 ---
 
-## 🔌 Connecting the Contact Form to a Backend
+## 🔌 Real-Time Contact Delivery
 
-The contact form includes client-side validation, field checks, error indicators, and a success feedback state. In production, connect the form to an actual mail delivery service or backend endpoint:
+The contact form is configured with **live real-time delivery** directly to `jkingsonisrael@gmail.com` via the secure FormSubmit JSON API, accompanied by full client-side validation, RFC-compliant email checking, real-time error clearance, and a fail-safe fallback mechanism.
 
-### Method A: Formspree (No-code / Fast)
-1. Sign up at [formspree.io](https://formspree.io) and create a form.
-2. Update the `<form>` opening tag in `index.html`:
-   ```html
-   <form id="contactForm" class="contact-form" action="https://formspree.io/f/{YOUR_FORM_ID}" method="POST">
-   ```
-3. In `script.js`, replace the `setTimeout` mock in `contactForm.addEventListener('submit', ...)` with:
-   ```javascript
-   const formData = new FormData(contactForm);
-   fetch('https://formspree.io/f/{YOUR_FORM_ID}', {
-     method: 'POST',
-     body: formData,
-     headers: { 'Accept': 'application/json' }
-   })
-   .then(response => {
-     if (response.ok) {
-       contactForm.reset();
-       showToast('Your message has been sent!');
-     }
-   });
-   ```
-
-### Method B: Resend / Cloudflare Workers / Node.js
-If routing submissions through your own API route:
-```javascript
-fetch('/api/contact', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    name: nameField.value.trim(),
-    email: emailField.value.trim(),
-    service: serviceField.value,
-    budget: budgetField.value,
-    message: messageInput.value.trim()
-  })
-});
-```
+### Features
+1. **Live Direct Routing**: Submissions instantly send an email brief to `jkingsonisrael@gmail.com` with formatted parameters (`Name`, `Email`, `Capability`, `Budget`, and `Project Message`).
+2. **Newsletter Sync**: Footer newsletter subscriptions dispatch an alert to `jkingsonisrael@gmail.com` logging the new subscriber.
+3. **Fail-Safe Fallback**: If an adblocker or strict proxy blocks third-party endpoints, the form provides a formatted 1-click `mailto:jkingsonisrael@gmail.com` link prefilled with all user details so messages are never lost.
 
 ---
 

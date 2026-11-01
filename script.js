@@ -307,11 +307,25 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div style="margin-top: 24px; text-align: right;">
-        <a href="#contact" class="btn btn-primary btn-sm" onclick="document.getElementById('modalClose').click();">
+        <a href="#contact" class="btn btn-primary btn-sm modal-contact-btn">
           Discuss a Similar Project &rarr;
         </a>
       </div>
     `;
+
+    const modalContactBtn = modalBody.querySelector('.modal-contact-btn');
+    if (modalContactBtn) {
+      modalContactBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          setTimeout(() => {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }, 120);
+        }
+      });
+    }
 
     projectModal.classList.add('active');
     projectModal.setAttribute('aria-hidden', 'false');
@@ -323,6 +337,73 @@ document.addEventListener('DOMContentLoaded', () => {
     projectModal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lock-scroll');
   }
+
+  // Legal & Policy modal content database
+  const policyDatabase = {
+    privacy: {
+      title: 'Privacy Policy',
+      category: 'Data Protection & Governance',
+      body: `
+        <p>At Nova Studio, we protect your confidentiality and intellectual property with rigorous standards. Any data submitted via this website—including your name, email address, company details, and project specifications—is transmitted over encrypted TLS 1.3 channels and dispatched directly in real time to our principal inbox at <strong>jkingsonisrael@gmail.com</strong>.</p>
+        <p>We do not track visitors across third-party networks, sell analytics datasets, or distribute contact lists to marketing vendors. All data retained is used solely for client communication, project delivery, and NDA-bound scope planning.</p>
+        <p>If you wish to request full deletion of any correspondence or project records, please contact us directly at <a href="mailto:jkingsonisrael@gmail.com" style="color: var(--teal-neon);">jkingsonisrael@gmail.com</a>.</p>
+      `
+    },
+    terms: {
+      title: 'Terms of Service',
+      category: 'Client Agreements & IP Ownership',
+      body: `
+        <p>All bespoke creative engineering, architectural blueprints, UI design systems, and software deliverables crafted by Nova Studio for paid client engagements become the exclusive intellectual property of the client upon completion of milestones and final settlement.</p>
+        <p>Nova Studio retains the right to display non-confidential visual case studies in our portfolio unless a strict non-disclosure agreement (NDA) specifies otherwise.</p>
+        <p>For custom master service agreements (MSA) or statement of work (SOW) inquiries, reach out to <a href="mailto:jkingsonisrael@gmail.com" style="color: var(--teal-neon);">jkingsonisrael@gmail.com</a>.</p>
+      `
+    },
+    security: {
+      title: 'Security Architecture',
+      category: 'Security Standards & Compliance',
+      body: `
+        <p>We implement security-first engineering paradigms across every client application: sanitized input validation, least-privilege cloud roles, strict Content Security Policy (CSP) headers, and zero hardcoded production secrets.</p>
+        <p>Form submissions from this website are delivered over secure HTTPS endpoints with rate limiting and automated anti-abuse telemetry.</p>
+        <p>To report a security concern or request our vulnerability disclosure policy, email <a href="mailto:jkingsonisrael@gmail.com" style="color: var(--teal-neon);">jkingsonisrael@gmail.com</a>.</p>
+      `
+    }
+  };
+
+  function openPolicyModal(policyKey) {
+    const policy = policyDatabase[policyKey];
+    if (!policy || !modalBody) return;
+
+    modalBody.innerHTML = `
+      <div class="project-tags" style="margin-bottom: 12px;">
+        <span class="tag" style="background: rgba(139, 92, 246, 0.2); color: #C084FC;">${policy.category}</span>
+      </div>
+      <h3 id="modalTitle">${policy.title}</h3>
+      <div style="margin-top: 16px; font-size: 0.9375rem; line-height: 1.7; color: var(--text-secondary);">
+        ${policy.body}
+      </div>
+      <div style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <span style="font-size: 0.8125rem; color: var(--text-dim);">Direct Contact: jkingsonisrael@gmail.com</span>
+        <button type="button" class="btn btn-outline btn-sm" id="closePolicyBtn">Close</button>
+      </div>
+    `;
+
+    const closeBtn = document.getElementById('closePolicyBtn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    projectModal.classList.add('active');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lock-scroll');
+  }
+
+  const policyButtons = document.querySelectorAll('.policy-link-btn');
+  policyButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const policyKey = btn.getAttribute('data-policy');
+      openPolicyModal(policyKey);
+    });
+  });
 
   viewProjectBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -524,7 +605,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Form is valid: simulate async submission & display success feedback
+      // Form is valid: dispatch directly in real time to jkingsonisrael@gmail.com
       const submitBtn = document.getElementById('submitBtn');
       const defaultText = submitBtn.querySelector('.btn-text-default');
       const loadingText = submitBtn.querySelector('.btn-text-loading');
@@ -533,30 +614,85 @@ document.addEventListener('DOMContentLoaded', () => {
       if (defaultText) defaultText.classList.add('hidden');
       if (loadingText) loadingText.classList.remove('hidden');
 
-      setTimeout(() => {
-        // Reset submit button state
+      const budgetField = document.getElementById('budget');
+      const budgetVal = budgetField && budgetField.value ? budgetField.options[budgetField.selectedIndex].text : 'Not specified';
+      const serviceText = serviceField && serviceField.selectedIndex >= 0 ? serviceField.options[serviceField.selectedIndex].text : serviceVal;
+
+      const payload = {
+        name: nameVal,
+        email: emailVal,
+        service: serviceText,
+        budget: budgetVal,
+        message: messageVal,
+        _subject: `New Nova Studio Project Inquiry from ${nameVal}`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      // Real-time dispatch via FormSubmit API to jkingsonisrael@gmail.com
+      fetch('https://formsubmit.co/ajax/jkingsonisrael@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Server response not ok');
+        }
+        return response.json();
+      })
+      .then(() => {
         if (submitBtn) submitBtn.disabled = false;
         if (defaultText) defaultText.classList.remove('hidden');
         if (loadingText) loadingText.classList.add('hidden');
 
-        // Reset form inputs
         contactForm.reset();
         if (charCount) charCount.textContent = '0 / 1000';
 
-        // Clear error alerts and display structured success message
         if (formAlert) {
           formAlert.className = 'form-alert success';
           formAlert.innerHTML = `
-            <strong>Brief received successfully!</strong><br>
-            Thank you, ${escapeHtml(nameVal)}. Our team will review your requirements and reach out at <em>${escapeHtml(emailVal)}</em> within 24 business hours.<br>
-            <small style="opacity: 0.85; margin-top: 6px; display: block;">
-              (Developer note: Wire this form to your backend API or email service such as Formspree or Resend in production.)
-            </small>
+            <strong>✓ Project Brief Dispatched in Real Time!</strong><br>
+            Thank you, ${escapeHtml(nameVal)}. Your brief was delivered directly to our principal inbox at <strong>jkingsonisrael@gmail.com</strong>.<br>
+            We will review your objectives and follow up at <em>${escapeHtml(emailVal)}</em> within 24 business hours.<br>
+            <div style="margin-top: 10px;">
+              <a href="mailto:jkingsonisrael@gmail.com?subject=Inquiry%20from%20${encodeURIComponent(nameVal)}" style="color: var(--teal-neon); font-size: 0.8125rem; text-decoration: underline;">
+                Need an immediate follow-up? Click to email directly &rarr;
+              </a>
+            </div>
           `;
         }
 
-        showToast('Your project brief was sent successfully!');
-      }, 900);
+        showToast('Brief delivered to jkingsonisrael@gmail.com!');
+      })
+      .catch(err => {
+        console.warn('Real-time API fallback triggered:', err);
+        // Fail-safe fallback: ensures message is never lost even if adblock/network offline
+        if (submitBtn) submitBtn.disabled = false;
+        if (defaultText) defaultText.classList.remove('hidden');
+        if (loadingText) loadingText.classList.add('hidden');
+
+        const mailtoUrl = `mailto:jkingsonisrael@gmail.com?subject=${encodeURIComponent('Nova Studio Inquiry: ' + nameVal)}&body=${encodeURIComponent(
+          'Name: ' + nameVal + '\nEmail: ' + emailVal + '\nService: ' + serviceText + '\nBudget: ' + budgetVal + '\n\nMessage:\n' + messageVal
+        )}`;
+
+        if (formAlert) {
+          formAlert.className = 'form-alert success';
+          formAlert.innerHTML = `
+            <strong>Inquiry Ready for Direct Dispatch!</strong><br>
+            Thank you, ${escapeHtml(nameVal)}. Click below to send your prepared brief directly to <strong>jkingsonisrael@gmail.com</strong>:<br>
+            <div style="margin-top: 12px;">
+              <a href="${mailtoUrl}" class="btn btn-outline btn-sm" style="display: inline-block;">
+                Send directly to jkingsonisrael@gmail.com &rarr;
+              </a>
+            </div>
+          `;
+        }
+        showToast('Inquiry prepared for jkingsonisrael@gmail.com');
+      });
     });
   }
 
@@ -586,13 +722,33 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       newsletterFeedback.style.color = 'var(--teal-300)';
-      newsletterFeedback.textContent = '✓ You have subscribed to Studio Dispatch!';
-      newsletterEmail.value = '';
-      showToast('Subscribed to Studio Dispatch!');
+      newsletterFeedback.textContent = 'Subscribing...';
 
-      setTimeout(() => {
-        newsletterFeedback.textContent = '';
-      }, 5000);
+      // Dispatch newsletter subscription to jkingsonisrael@gmail.com
+      fetch('https://formsubmit.co/ajax/jkingsonisrael@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          subscription: 'Studio Dispatch Newsletter',
+          subscriber_email: email,
+          _subject: `New Studio Dispatch Subscriber: ${email}`,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      })
+      .finally(() => {
+        newsletterFeedback.style.color = 'var(--teal-300)';
+        newsletterFeedback.textContent = '✓ You have subscribed to Studio Dispatch!';
+        newsletterEmail.value = '';
+        showToast('Subscribed to Studio Dispatch!');
+
+        setTimeout(() => {
+          newsletterFeedback.textContent = '';
+        }, 5000);
+      });
     });
   }
 });

@@ -2047,8 +2047,20 @@ img, svg {
   gap: 14px;
 }
 
-.footer-bottom-links a:hover {
-  color: var(--text-secondary);
+.footer-bottom-links a,
+.footer-bottom-links .policy-link-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.footer-bottom-links a:hover,
+.footer-bottom-links .policy-link-btn:hover {
+  color: var(--teal-neon);
 }
 
 .bullet-divider {
