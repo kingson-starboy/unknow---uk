@@ -1,25 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nova Studio — Premium digital experience and product engineering studio. We build high-impact web applications, immersive digital products, and future-ready brands.">
-  <meta name="theme-color" content="#080C16">
-  <title>Nova Studio | Digital Product & Web Development Studio</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- Google Fonts Preconnect & Inter / Space Grotesk -->
+  <!-- Primary Meta Tags -->
+  <title>Nova Studio | Creative Engineering & High-Performance Digital Products</title>
+  <meta name="title" content="Nova Studio | Creative Engineering & High-Performance Digital Products">
+  <meta name="description" content="Nova Studio is an independent creative engineering studio founded by Kingson Israel. We architect high-impact web applications, fluid UI systems, and future-ready digital platforms for ambitious founders and scale-ups.">
+  <meta name="keywords" content="web engineering, UI/UX design, full-stack development, design systems, TypeScript, Next.js, performance optimization, digital product studio">
+  <meta name="author" content="Kingson Israel">
+  <meta name="theme-color" content="#080C16">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kingson-starboy.github.io/unknow---uk/">
+  <meta property="og:title" content="Nova Studio — Creative Engineering & Digital Products">
+  <meta property="og:description" content="We engineer web products that look like art and perform like machines. Full-stack development, bespoke design systems, and sub-second web performance.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://kingson-starboy.github.io/unknow---uk/">
+  <meta property="twitter:title" content="Nova Studio — Creative Engineering & Digital Products">
+  <meta property="twitter:description" content="Boutique digital product engineering studio led by Kingson Israel. Delivering surgical frontend craft, scalable backend architecture, and obsessive visual polish.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+
+  <link rel="canonical" href="https://kingson-starboy.github.io/unknow---uk/">
+
+  <!-- Google Fonts Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%230b0f19'/><path d='M16 6 L22 16 L16 26 L10 16 Z' fill='%238B5CF6'/><circle cx='16' cy='16' r='4' fill='%2300F2FE'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23080C16'/><path d='M16 5 L23 16 L16 27 L9 16 Z' fill='%238B5CF6'/><circle cx='16' cy='16' r='4' fill='%2300F2FE'/></svg>">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Nova Studio",
+    "url": "https://kingson-starboy.github.io/unknow---uk/",
+    "logo": "https://kingson-starboy.github.io/unknow---uk/data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23080C16'/><path d='M16 5 L23 16 L16 27 L9 16 Z' fill='%238B5CF6'/><circle cx='16' cy='16' r='4' fill='%2300F2FE'/></svg>",
+    "founder": {
+      "@type": "Person",
+      "name": "Kingson Israel"
+    },
+    "email": "jkingsonisrael@gmail.com",
+    "description": "Boutique creative engineering studio building modern web applications, bespoke design systems, and high-performance digital products.",
+    "serviceType": [
+      "Full-Stack Web Engineering",
+      "UI/UX & Product Design",
+      "Enterprise Design Systems",
+      "Core Web Vitals Optimization",
+      "AI Workflow Integration"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <!-- Interactive Mouse Spotlight (Tracks cursor across view on desktop) -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
   <!-- Ambient background glow elements -->
-  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
-  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
-  <div class="ambient-glow ambient-glow-3" aria-hidden="true"></div>
+  <div class="ambient-mesh ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-mesh ambient-glow-2" aria-hidden="true"></div>
+  <div class="ambient-mesh ambient-glow-3" aria-hidden="true"></div>
 
   <!-- Header / Navigation Bar -->
   <header class="site-header" id="header">
@@ -49,9 +98,10 @@
       <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
         <ul class="nav-list">
           <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#projects" class="nav-link">Work</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#capabilities" class="nav-link">Capabilities</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Selected Work</a></li>
+          <li class="nav-item"><a href="#estimator" class="nav-link">Scope Estimator</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">Studio</a></li>
           <li class="nav-item"><a href="#process" class="nav-link">Process</a></li>
           <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -70,7 +120,7 @@
   </header>
 
   <!-- Mobile Navigation Drawer Overlay -->
-  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
     <div class="drawer-content">
       <div class="drawer-header">
@@ -88,15 +138,18 @@
       </div>
       <ul class="drawer-nav">
         <li><a href="#hero" class="drawer-link">Home</a></li>
-        <li><a href="#services" class="drawer-link">Services</a></li>
-        <li><a href="#projects" class="drawer-link">Work</a></li>
-        <li><a href="#about" class="drawer-link">About</a></li>
+        <li><a href="#capabilities" class="drawer-link">Capabilities</a></li>
+        <li><a href="#projects" class="drawer-link">Selected Work</a></li>
+        <li><a href="#estimator" class="drawer-link">Scope Estimator</a></li>
+        <li><a href="#about" class="drawer-link">Studio</a></li>
         <li><a href="#process" class="drawer-link">Process</a></li>
         <li><a href="#contact" class="drawer-link">Contact</a></li>
       </ul>
       <div class="drawer-footer">
-        <a href="#contact" class="btn btn-primary btn-block drawer-cta">Get a Proposal</a>
-        <p class="drawer-contact-hint"><a href="mailto:jkingsonisrael@gmail.com" style="color: var(--teal-300);">jkingsonisrael@gmail.com</a></p>
+        <a href="#contact" class="btn btn-primary btn-block drawer-cta">Start a Project &rarr;</a>
+        <p class="drawer-contact-hint">
+          Direct email: <a href="mailto:jkingsonisrael@gmail.com" class="text-accent">jkingsonisrael@gmail.com</a>
+        </p>
       </div>
     </div>
   </div>
@@ -108,29 +161,29 @@
         <div class="hero-content">
           <div class="badge hero-badge">
             <span class="badge-dot"></span>
-            <span>Available for new projects &middot; Q4 2026</span>
+            <span>Available for select commissions &middot; Q4 2026 / Q1 2027</span>
           </div>
           <h1 class="hero-title">
-            Architecting <span class="gradient-text">digital experiences</span> that command attention.
+            We engineer web products that look like <span class="gradient-text">art</span> and perform like <span class="text-accent">machines</span>.
           </h1>
           <p class="hero-subtitle">
-            Nova Studio is a boutique creative engineering studio. We combine high-velocity full-stack development, brand architecture, and fluid UI design to propel ambitious businesses forward.
+            Nova Studio is an independent creative engineering practice led by <strong>Kingson Israel</strong>. We bridge surgical full-stack code, bespoke motion, and fluid UI systems to help founders and modern product teams command market attention.
           </p>
           <div class="hero-cta-group">
-            <a href="#projects" class="btn btn-primary btn-lg">
-              Explore Our Work
-              <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+            <a href="#contact" class="btn btn-primary btn-lg">
+              Start a Project
+              <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
               </svg>
             </a>
-            <a href="#contact" class="btn btn-secondary btn-lg">Schedule Discovery</a>
+            <a href="#projects" class="btn btn-secondary btn-lg">Browse Selected Work</a>
           </div>
 
           <!-- Trust metrics -->
           <div class="hero-metrics">
             <div class="metric-item">
-              <span class="metric-number">99.4%</span>
-              <span class="metric-label">On-time Delivery</span>
+              <span class="metric-number">99.8%</span>
+              <span class="metric-label">On-time Delivery Rate</span>
             </div>
             <div class="metric-divider" aria-hidden="true"></div>
             <div class="metric-item">
@@ -139,49 +192,148 @@
             </div>
             <div class="metric-divider" aria-hidden="true"></div>
             <div class="metric-item">
-              <span class="metric-number">$50M+</span>
-              <span class="metric-label">Client Funding Raised</span>
+              <span class="metric-number">&lt; 350ms</span>
+              <span class="metric-label">Average LCP Load Time</span>
             </div>
           </div>
         </div>
 
-        <!-- Hero Visual Showcase Component -->
-        <div class="hero-visual" aria-hidden="true">
+        <!-- Hero Interactive Studio Engine Showcase (Real interactive prototype switchers) -->
+        <div class="hero-visual">
           <div class="preview-card-wrap">
-            <div class="preview-glow"></div>
-            <div class="preview-card">
+            <div class="preview-glow" aria-hidden="true"></div>
+            <div class="preview-card" id="heroInteractiveCard">
               <div class="preview-card-topbar">
-                <div class="window-dots">
+                <div class="window-dots" aria-hidden="true">
                   <span class="dot red"></span>
                   <span class="dot yellow"></span>
                   <span class="dot green"></span>
                 </div>
-                <div class="window-title">nova-system // production-v3.8.sh</div>
-                <div class="window-status"><span class="pulse-indicator"></span>LIVE</div>
+                <!-- Interactive Tabs in the Window Bar -->
+                <div class="hero-demo-tabs" role="tablist" aria-label="Interactive Showcase Modes">
+                  <button class="hero-tab active" data-tab="telemetry" role="tab" aria-selected="true">Telemetry</button>
+                  <button class="hero-tab" data-tab="design" role="tab" aria-selected="false">Design Tokens</button>
+                  <button class="hero-tab" data-tab="ai" role="tab" aria-selected="false">AI Copilot</button>
+                </div>
+                <div class="window-status"><span class="pulse-indicator" aria-hidden="true"></span>ACTIVE</div>
               </div>
-              <div class="preview-code-body">
-                <div class="code-line"><span class="c-purple">import</span> { StudioEngine, MotionCore } <span class="c-purple">from</span> <span class="c-teal">'@nova/core'</span>;</div>
-                <div class="code-line"><span class="c-purple">const</span> studio = <span class="c-blue">new</span> <span class="c-teal">StudioEngine</span>({</div>
-                <div class="code-line indent"><span class="c-dim">performance:</span> <span class="c-purple">'100/100'</span>,</div>
-                <div class="code-line indent"><span class="c-dim">experience:</span> <span class="c-teal">'immersive'</span>,</div>
-                <div class="code-line indent"><span class="c-dim">stack:</span> [<span class="c-teal">'React'</span>, <span class="c-teal">'TypeScript'</span>, <span class="c-teal">'WebGL'</span>],</div>
-                <div class="code-line indent"><span class="c-dim">accessibility:</span> <span class="c-purple">'WCAG_AAA'</span></div>
-                <div class="code-line">});</div>
-                <div class="code-line"><span class="c-comment">// Delivering high-impact digital products</span></div>
-                <div class="code-line"><span class="c-purple">await</span> studio.<span class="c-blue">launchTransformativeExperience</span>();</div>
+
+              <!-- Tab View 1: Live Telemetry Mockup -->
+              <div class="hero-demo-view active" id="view-telemetry">
+                <div class="demo-telemetry-header">
+                  <div>
+                    <span class="demo-sub">Production Cluster // US-East</span>
+                    <strong class="demo-title">Telemetry Engine v4.2</strong>
+                  </div>
+                  <span class="demo-badge-health">99.99% HEALTHY</span>
+                </div>
+                <div class="demo-metric-row">
+                  <div class="demo-metric-box">
+                    <span class="d-label">Throughput</span>
+                    <span class="d-val" id="dynThroughput">4.82 GB/s</span>
+                  </div>
+                  <div class="demo-metric-box">
+                    <span class="d-label">P99 Latency</span>
+                    <span class="d-val text-accent" id="dynLatency">14.2 ms</span>
+                  </div>
+                  <div class="demo-metric-box">
+                    <span class="d-label">Requests/sec</span>
+                    <span class="d-val" id="dynRps">28,450</span>
+                  </div>
+                </div>
+                <div class="demo-chart-container" aria-label="Live Stream Activity Graph">
+                  <div class="demo-bars">
+                    <span class="d-bar b-1"></span>
+                    <span class="d-bar b-2"></span>
+                    <span class="d-bar b-3"></span>
+                    <span class="d-bar b-4"></span>
+                    <span class="d-bar b-5"></span>
+                    <span class="d-bar b-6"></span>
+                    <span class="d-bar b-7"></span>
+                    <span class="d-bar b-8"></span>
+                    <span class="d-bar b-9"></span>
+                    <span class="d-bar b-10"></span>
+                  </div>
+                </div>
+                <div class="demo-footer-status">
+                  <span>WebSocket: Connected</span>
+                  <span>TLS 1.3 Strict</span>
+                </div>
               </div>
+
+              <!-- Tab View 2: Interactive Design Tokens -->
+              <div class="hero-demo-view" id="view-design">
+                <div class="demo-telemetry-header">
+                  <div>
+                    <span class="demo-sub">Design Token Engine</span>
+                    <strong class="demo-title">Interactive Component Lab</strong>
+                  </div>
+                  <span class="demo-badge-tokens">WCAG AAA</span>
+                </div>
+                <p class="demo-instruction">Test real micro-states directly inside this window:</p>
+                <div class="demo-interactive-controls">
+                  <div class="demo-control-row">
+                    <span class="ctrl-label">Theme Accent</span>
+                    <div class="demo-color-swatches" id="colorSwatches">
+                      <button class="color-swatch active" data-color="purple" style="background: #8B5CF6;" aria-label="Purple Accent"></button>
+                      <button class="color-swatch" data-color="teal" style="background: #00F2FE;" aria-label="Teal Accent"></button>
+                      <button class="color-swatch" data-color="emerald" style="background: #10B981;" aria-label="Emerald Accent"></button>
+                    </div>
+                  </div>
+                  <div class="demo-control-row">
+                    <span class="ctrl-label">Live Interactive Toggle</span>
+                    <label class="demo-switch" aria-label="Toggle Hardware Acceleration">
+                      <input type="checkbox" id="demoHardwareToggle" checked>
+                      <span class="switch-slider"></span>
+                    </label>
+                  </div>
+                  <div class="demo-control-row">
+                    <span class="ctrl-label">Tactile Button Feedback</span>
+                    <button class="btn btn-outline btn-sm" id="demoFeedbackBtn">Click to Trigger Ripple</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab View 3: AI Copilot Assistant -->
+              <div class="hero-demo-view" id="view-ai">
+                <div class="demo-telemetry-header">
+                  <div>
+                    <span class="demo-sub">Autonomous Copilot</span>
+                    <strong class="demo-title">Document Intelligence</strong>
+                  </div>
+                  <span class="demo-badge-health">READY</span>
+                </div>
+                <div class="demo-ai-chatbox">
+                  <div class="demo-bubble prompt">
+                    <span>Audit Q3 enterprise retention and flag anomalies.</span>
+                  </div>
+                  <div class="demo-bubble response">
+                    <div class="ai-avatar" aria-hidden="true">&#9733;</div>
+                    <div class="ai-text">
+                      <strong>Cortex Agent Analysis:</strong>
+                      <p>Analyzed 14,200 cohort records. Net retention reached 138%. Identified a 12% expansion opportunity in multi-seat workspaces.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="demo-ai-input-sim">
+                  <span>Ask Nova Studio Copilot...</span>
+                  <button class="demo-ai-send" aria-label="Send prompt">&#8594;</button>
+                </div>
+              </div>
+
+              <!-- Micro floating badges -->
               <div class="preview-floating-badge float-badge-1">
                 <div class="badge-icon">&#10003;</div>
                 <div class="badge-content">
                   <strong>Zero Technical Debt</strong>
-                  <span>Clean Architecture</span>
+                  <span>Surgical Clean Code</span>
                 </div>
               </div>
               <div class="preview-floating-badge float-badge-2">
                 <div class="badge-icon-teal">&#9733;</div>
                 <div class="badge-content">
-                  <strong>Sub-second Latency</strong>
-                  <span>Blazing Fast Web Core</span>
+                  <strong>Sub-second Speed</strong>
+                  <span>99+ Lighthouse Vitals</span>
                 </div>
               </div>
             </div>
@@ -193,53 +345,57 @@
     <!-- CLIENT LOGOS TICKER -->
     <section class="clients-strip" aria-label="Trusted client partners">
       <div class="container">
-        <p class="clients-title">TRUSTED BY INNOVATIVE FOUNDERS & SCALING ENTERPRISES</p>
+        <p class="clients-title">TRUSTED BY VENTURE-BACKED FOUNDERS & MODERN ENTERPRISES</p>
         <div class="clients-grid">
           <div class="client-logo"><span>AETHER</span> LABS</div>
           <div class="client-logo"><span>QUANTUM</span>.AI</div>
           <div class="client-logo"><span>PULSE</span> DYNAMICS</div>
-          <div class="client-logo"><span>VERTEX</span> FINTECH</div>
+          <div class="client-logo"><span>VERTEX</span> CAPITAL</div>
           <div class="client-logo"><span>SYNAPSE</span> OS</div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="section services-section" id="services">
+    <!-- CAPABILITIES SECTION (BENTO GRID) -->
+    <section class="section capabilities-section" id="capabilities">
       <div class="container">
         <div class="section-header text-center">
           <div class="badge">Core Capabilities</div>
-          <h2 class="section-title">Engineered for impact & aesthetic precision</h2>
+          <h2 class="section-title">Built for speed, beauty & lasting architectural strength</h2>
           <p class="section-subtitle">
-            From strategic concept to production deployment, we bridge modern design philosophies with resilient engineering.
+            We don't hand off brittle templates or bloated stacks. Every application is crafted with meticulous engineering, strict typing, and fluid interaction design.
           </p>
         </div>
 
-        <div class="services-grid">
-          <!-- Service Card 1 -->
-          <article class="service-card">
-            <div class="service-icon-box">
+        <div class="bento-grid">
+          <!-- Bento Card 1: Full-Stack Web Applications (Span 2) -->
+          <article class="bento-card bento-wide">
+            <div class="bento-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                 <polyline points="2 17 12 22 22 17"></polyline>
                 <polyline points="2 12 12 17 22 12"></polyline>
               </svg>
             </div>
-            <h3 class="service-title">Full-Stack Web Engineering</h3>
-            <p class="service-desc">
-              High-performance web applications built with modern frontend frameworks, scalable cloud architectures, and strict typing.
-            </p>
-            <ul class="service-features">
-              <li>TypeScript & modern frameworks</li>
-              <li>Microservices & API integrations</li>
-              <li>Edge computing & serverless scale</li>
-            </ul>
+            <div class="bento-body">
+              <div class="bento-badge">Flagship Discipline</div>
+              <h3 class="bento-title">Full-Stack Web Engineering</h3>
+              <p class="bento-desc">
+                High-concurrency web applications, distributed dashboards, and SaaS architectures engineered with TypeScript, Next.js, Cloudflare Edge Workers, and resilient relational or serverless databases.
+              </p>
+              <div class="bento-pill-group">
+                <span class="pill">TypeScript</span>
+                <span class="pill">Next.js</span>
+                <span class="pill">FastAPI</span>
+                <span class="pill">PostgreSQL</span>
+                <span class="pill">WebSockets</span>
+              </div>
+            </div>
           </article>
 
-          <!-- Service Card 2 -->
-          <article class="service-card featured">
-            <div class="featured-tag">Popular</div>
-            <div class="service-icon-box">
+          <!-- Bento Card 2: UI/UX & Design Systems -->
+          <article class="bento-card">
+            <div class="bento-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
                 <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
@@ -247,91 +403,80 @@
                 <circle cx="11" cy="11" r="2"></circle>
               </svg>
             </div>
-            <h3 class="service-title">UI/UX & Product Design</h3>
-            <p class="service-desc">
-              Human-centered digital interfaces, interactive prototypes, and design systems designed to delight users and drive conversion.
-            </p>
-            <ul class="service-features">
-              <li>Design sprint workshops & wireframes</li>
-              <li>Figma-first design systems</li>
-              <li>Micro-animations & interactive states</li>
-            </ul>
-          </article>
-
-          <!-- Service Card 3 -->
-          <article class="service-card">
-            <div class="service-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
+            <div class="bento-body">
+              <h3 class="bento-title">Bespoke UI & Design Systems</h3>
+              <p class="bento-desc">
+                Modular component architectures and design tokens that bridge Figma to production code with WCAG AAA accessibility and tactile interaction physics.
+              </p>
+              <div class="bento-pill-group">
+                <span class="pill">Design Tokens</span>
+                <span class="pill">Figma-to-Code</span>
+                <span class="pill">Micro-Interactions</span>
+              </div>
             </div>
-            <h3 class="service-title">Enterprise Design Systems</h3>
-            <p class="service-desc">
-              Modular, accessible component libraries that align development and design teams, drastically slashing time to market.
-            </p>
-            <ul class="service-features">
-              <li>Accessible tokens (WCAG compliant)</li>
-              <li>Storybook component documentation</li>
-              <li>Cross-platform consistency</li>
-            </ul>
           </article>
 
-          <!-- Service Card 4 -->
-          <article class="service-card">
-            <div class="service-icon-box">
+          <!-- Bento Card 3: Ruthless Performance -->
+          <article class="bento-card">
+            <div class="bento-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
               </svg>
             </div>
-            <h3 class="service-title">Performance & Core Web Vitals</h3>
-            <p class="service-desc">
-              Ruthless optimization for sub-second loads, perfect Lighthouse scores, search rankings, and rock-solid reliability under peak load.
-            </p>
-            <ul class="service-features">
-              <li>Lighthouse 95+ score optimization</li>
-              <li>Asset compression & critical CSS</li>
-              <li>Semantic technical SEO foundations</li>
-            </ul>
+            <div class="bento-body">
+              <h3 class="bento-title">Core Web Vitals Mastery</h3>
+              <p class="bento-desc">
+                Sub-350ms initial render times, zero cumulative layout shift (CLS 0.00), bundle pruning, and server-side edge caching calibrated for competitive organic SEO dominance.
+              </p>
+              <div class="bento-pill-group">
+                <span class="pill">99+ Lighthouse</span>
+                <span class="pill">Sub-second LCP</span>
+                <span class="pill">Edge SSR</span>
+              </div>
+            </div>
           </article>
 
-          <!-- Service Card 5 -->
-          <article class="service-card">
-            <div class="service-icon-box">
+          <!-- Bento Card 4: AI & Agentic Orchestration -->
+          <article class="bento-card">
+            <div class="bento-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="3"></circle>
                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
               </svg>
             </div>
-            <h3 class="service-title">AI & Smart Workflow Integrations</h3>
-            <p class="service-desc">
-              Leveraging intelligent conversational interfaces, automated data pipelines, and custom AI agents directly within web products.
-            </p>
-            <ul class="service-features">
-              <li>LLM integration & vector search</li>
-              <li>Agentic automation backends</li>
-              <li>Secure API orchestration</li>
-            </ul>
+            <div class="bento-body">
+              <h3 class="bento-title">AI & Agentic Workflows</h3>
+              <p class="bento-desc">
+                Custom retrieval-augmented workflows (RAG), vector database indexes, and natural language copilot interfaces embedded directly into web software.
+              </p>
+              <div class="bento-pill-group">
+                <span class="pill">LLM Orchestration</span>
+                <span class="pill">Vector Search</span>
+                <span class="pill">Autonomous Agents</span>
+              </div>
+            </div>
           </article>
 
-          <!-- Service Card 6 -->
-          <article class="service-card">
-            <div class="service-icon-box">
+          <!-- Bento Card 5: Mobile & PWA Excellence (Span 2) -->
+          <article class="bento-card bento-wide">
+            <div class="bento-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
                 <line x1="12" y1="18" x2="12.01" y2="18"></line>
               </svg>
             </div>
-            <h3 class="service-title">Mobile-First Applications</h3>
-            <p class="service-desc">
-              Responsive PWA and cross-platform native experiences optimized for thumb-friendly navigation and gesture interactions.
-            </p>
-            <ul class="service-features">
-              <li>Offline-capable Progressive Web Apps</li>
-              <li>Native feel & gesture triggers</li>
-              <li>Fluid responsive adaptive layout</li>
-            </ul>
+            <div class="bento-body">
+              <h3 class="bento-title">Native-Grade Mobile & PWA Physics</h3>
+              <p class="bento-desc">
+                Fluid thumb-first layouts, swipe gesture navigations, offline service workers, and responsive breakpoints calibrated for smartphones, foldables, tablets, and 4K desktop screens.
+              </p>
+              <div class="bento-pill-group">
+                <span class="pill">PWA Offline</span>
+                <span class="pill">Fluid Touch</span>
+                <span class="pill">Adaptive Layouts</span>
+                <span class="pill">Zero Layout Shift</span>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -341,34 +486,34 @@
     <section class="section projects-section" id="projects">
       <div class="container">
         <div class="section-header text-center">
-          <div class="badge">Featured Work</div>
-          <h2 class="section-title">Selected projects & flagship case studies</h2>
+          <div class="badge">Selected Work</div>
+          <h2 class="section-title">Flagship client products & engineering case studies</h2>
           <p class="section-subtitle">
-            Explore our portfolio of cutting-edge web applications, brand identities, and high-conversion software platforms.
+            Explore our curated portfolio of production software platforms, high-conversion web applications, and brand identities.
           </p>
 
           <!-- Filter Tabs -->
           <div class="project-filters" role="tablist" aria-label="Filter Projects">
-            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Work</button>
-            <button class="filter-btn" data-filter="webapp" role="tab" aria-selected="false">Web Apps</button>
-            <button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Branding</button>
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Case Studies</button>
+            <button class="filter-btn" data-filter="webapp" role="tab" aria-selected="false">Web Applications</button>
             <button class="filter-btn" data-filter="saas" role="tab" aria-selected="false">SaaS & AI</button>
+            <button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Brand Systems</button>
           </div>
         </div>
 
         <div class="projects-grid" id="projectsGrid">
-          <!-- Project 1 -->
+          <!-- Project 1: Prism Data Cloud -->
           <article class="project-card" data-category="webapp saas" data-project-id="1">
             <div class="project-media">
               <div class="project-mockup mockup-prism">
                 <div class="mockup-header">
                   <span class="m-dot"></span><span class="m-dot"></span><span class="m-dot"></span>
-                  <span class="m-url">prism-cloud.io/analytics</span>
+                  <span class="m-url">prism-cloud.io/live-telemetry</span>
                 </div>
                 <div class="mockup-screen">
                   <div class="mockup-stat-row">
-                    <div class="m-stat-box"><span class="m-label">Active Users</span><span class="m-val">+142%</span></div>
-                    <div class="m-stat-box"><span class="m-label">Throughput</span><span class="m-val">4.8 GB/s</span></div>
+                    <div class="m-stat-box"><span class="m-label">Active Concurrency</span><span class="m-val">150,000</span></div>
+                    <div class="m-stat-box"><span class="m-label">Query Time</span><span class="m-val text-accent">420 ms</span></div>
                   </div>
                   <div class="mockup-graph-lines">
                     <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span><span class="bar b5"></span>
@@ -376,94 +521,94 @@
                 </div>
               </div>
               <div class="project-overlay">
-                <button class="btn btn-primary btn-sm view-project-btn" data-project="1">View Details</button>
+                <button class="btn btn-primary btn-sm view-project-btn" data-project="1">Inspect Case Study</button>
               </div>
             </div>
             <div class="project-info">
               <div class="project-tags">
                 <span class="tag">Web App</span>
                 <span class="tag">Next.js</span>
-                <span class="tag">Analytics</span>
+                <span class="tag">Telemetry</span>
               </div>
               <h3 class="project-title">Prism Data Cloud</h3>
               <p class="project-desc">
-                High-concurrency streaming telemetry platform engineered with real-time WebSockets and sub-millisecond query rendering.
+                High-concurrency streaming telemetry dashboard engineered with real-time WebSockets, sub-millisecond query rendering, and zero UI stuttering.
               </p>
               <div class="project-meta">
-                <span class="client-name">Client: Prism Technologies</span>
+                <span class="client-name">Prism Technologies</span>
                 <button class="btn-text view-project-btn" data-project="1">Read Case Study &rarr;</button>
               </div>
             </div>
           </article>
 
-          <!-- Project 2 -->
+          <!-- Project 2: Aura Soundworks -->
           <article class="project-card" data-category="branding" data-project-id="2">
             <div class="project-media">
               <div class="project-mockup mockup-aurora">
                 <div class="aurora-brand-visual">
                   <div class="aurora-circle"></div>
                   <span class="brand-monogram">AURA</span>
-                  <span class="brand-sub">Nordic Soundworks</span>
+                  <span class="brand-sub">Nordic Acoustics</span>
                 </div>
               </div>
               <div class="project-overlay">
-                <button class="btn btn-primary btn-sm view-project-btn" data-project="2">View Details</button>
+                <button class="btn btn-primary btn-sm view-project-btn" data-project="2">Inspect Case Study</button>
               </div>
             </div>
             <div class="project-info">
               <div class="project-tags">
-                <span class="tag">Branding</span>
-                <span class="tag">Design System</span>
-                <span class="tag">Typography</span>
+                <span class="tag">Brand Architecture</span>
+                <span class="tag">Design Tokens</span>
+                <span class="tag">Acoustics</span>
               </div>
               <h3 class="project-title">Aura Audio Rebrand</h3>
               <p class="project-desc">
-                Complete sensory brand system, bespoke typography package, and interactive acoustic product showcase for luxury audiophiles.
+                Sensory luxury brand identity, custom typography system, and interactive acoustic product showcase resulting in a 220% waitlist expansion.
               </p>
               <div class="project-meta">
-                <span class="client-name">Client: Aura Soundworks</span>
+                <span class="client-name">Aura Soundworks</span>
                 <button class="btn-text view-project-btn" data-project="2">Read Case Study &rarr;</button>
               </div>
             </div>
           </article>
 
-          <!-- Project 3 -->
+          <!-- Project 3: Cortex AI Copilot -->
           <article class="project-card" data-category="saas" data-project-id="3">
             <div class="project-media">
               <div class="project-mockup mockup-cortex">
                 <div class="mockup-header">
                   <span class="m-dot"></span><span class="m-dot"></span><span class="m-dot"></span>
-                  <span class="m-url">cortex.ai/studio</span>
+                  <span class="m-url">cortex.ai/workspace</span>
                 </div>
                 <div class="mockup-ai-chat">
-                  <div class="ai-msg prompt">Summarize Q3 financial trends...</div>
+                  <div class="ai-msg prompt">Summarize Q3 cohort financial retention...</div>
                   <div class="ai-msg response">
-                    <span class="ai-dot"></span> Model output: Revenue increased 34% with ARR reaching $12.4M...
+                    <span class="ai-dot"></span> Model output: Retention increased to 138% with ARR accelerating to ₹135 Cr...
                   </div>
                 </div>
               </div>
               <div class="project-overlay">
-                <button class="btn btn-primary btn-sm view-project-btn" data-project="3">View Details</button>
+                <button class="btn btn-primary btn-sm view-project-btn" data-project="3">Inspect Case Study</button>
               </div>
             </div>
             <div class="project-info">
               <div class="project-tags">
-                <span class="tag">SaaS & AI</span>
+                <span class="tag">SaaS Platform</span>
                 <span class="tag">Python</span>
-                <span class="tag">LLM Orchestration</span>
+                <span class="tag">Agentic LLM</span>
               </div>
               <h3 class="project-title">Cortex Intelligent Co-pilot</h3>
               <p class="project-desc">
-                Autonomous knowledge workspace integrating custom generative AI workflows and vector retrieval for enterprise finance teams.
+                Autonomous financial knowledge workspace integrating custom generative AI workflows and vector retrieval for venture-backed analysts.
               </p>
               <div class="project-meta">
-                <span class="client-name">Client: Cortex Intelligence</span>
+                <span class="client-name">Cortex Intelligence</span>
                 <button class="btn-text view-project-btn" data-project="3">Read Case Study &rarr;</button>
               </div>
             </div>
           </article>
 
-          <!-- Project 4 -->
+          <!-- Project 4: Velocity Global Payments -->
           <article class="project-card" data-category="webapp" data-project-id="4">
             <div class="project-media">
               <div class="project-mockup mockup-velocity">
@@ -475,26 +620,26 @@
                   <div class="crypto-card">
                     <div class="card-chip"></div>
                     <div class="card-num">&bull;&bull;&bull;&bull; 4892</div>
-                    <div class="card-balance">$84,230.00</div>
+                    <div class="card-balance">₹8,42,300</div>
                   </div>
                 </div>
               </div>
               <div class="project-overlay">
-                <button class="btn btn-primary btn-sm view-project-btn" data-project="4">View Details</button>
+                <button class="btn btn-primary btn-sm view-project-btn" data-project="4">Inspect Case Study</button>
               </div>
             </div>
             <div class="project-info">
               <div class="project-tags">
                 <span class="tag">Web App</span>
                 <span class="tag">FinTech</span>
-                <span class="tag">Security</span>
+                <span class="tag">Zero-Trust</span>
               </div>
               <h3 class="project-title">Velocity Global Payments</h3>
               <p class="project-desc">
-                Cross-border financial portal supporting multicurrency settlements, fraud protection telemetry, and compliant card issuance.
+                Cross-border financial portal supporting multicurrency settlements, instant virtual card issuance, and high-frequency liquidity telemetry.
               </p>
               <div class="project-meta">
-                <span class="client-name">Client: Velocity Financial</span>
+                <span class="client-name">Velocity Financial</span>
                 <button class="btn-text view-project-btn" data-project="4">Read Case Study &rarr;</button>
               </div>
             </div>
@@ -503,16 +648,87 @@
       </div>
     </section>
 
-    <!-- PROJECT DETAILS MODAL -->
+    <!-- CASE STUDY QUICK-VIEW & POLICY MODAL -->
     <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-backdrop" id="modalBackdrop"></div>
       <div class="modal-content">
-        <button class="modal-close" id="modalClose" aria-label="Close project modal">&times;</button>
+        <button class="modal-close" id="modalClose" aria-label="Close modal dialog">&times;</button>
         <div class="modal-body" id="modalBody">
-          <!-- Dynamic injected content -->
+          <!-- Dynamic injected case study or policy content -->
         </div>
       </div>
     </div>
+
+    <!-- NEW INTERACTIVE FEATURE: SCOPE & ESTIMATOR CALCULATOR -->
+    <section class="section estimator-section" id="estimator">
+      <div class="container max-w-narrow">
+        <div class="section-header text-center">
+          <div class="badge">Interactive Planning</div>
+          <h2 class="section-title">Calculate your project scope & estimated sprint timeline</h2>
+          <p class="section-subtitle">
+            Configure your technical requirements to generate a transparent ballpark scope and estimated delivery timeline in real time.
+          </p>
+        </div>
+
+        <div class="estimator-card">
+          <!-- Step 1: Project Type -->
+          <div class="estimator-step">
+            <label class="estimator-step-label">1. Primary Product Scope</label>
+            <div class="estimator-options-grid" id="scopeTypeOptions">
+              <button type="button" class="est-option-btn active" data-type="webapp" data-base="150000" data-weeks="5">
+                <strong>Full-Stack Web App</strong>
+                <span>Custom client portal, SaaS, or complex tool</span>
+              </button>
+              <button type="button" class="est-option-btn" data-type="website" data-base="60000" data-weeks="3">
+                <strong>Marketing Platform & Brand</strong>
+                <span>High-impact website with CMS & motion</span>
+              </button>
+              <button type="button" class="est-option-btn" data-type="ai" data-base="200000" data-weeks="6">
+                <strong>AI & Agentic Solution</strong>
+                <span>LLM pipelines, vector search & smart workflows</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Key Capabilities Needed -->
+          <div class="estimator-step">
+            <label class="estimator-step-label">2. Select Desired Features (Choose all that apply)</label>
+            <div class="estimator-features-grid" id="featureCheckboxes">
+              <label class="feature-chip">
+                <input type="checkbox" value="25000" data-feat="auth" checked>
+                <span class="chip-content">Auth & Role-Based Access (+₹25k)</span>
+              </label>
+              <label class="feature-chip">
+                <input type="checkbox" value="30000" data-feat="payments">
+                <span class="chip-content">Razorpay / UPI / Stripe (+₹30k)</span>
+              </label>
+              <label class="feature-chip">
+                <input type="checkbox" value="35000" data-feat="design-system">
+                <span class="chip-content">Figma Design System Tokens (+₹35k)</span>
+              </label>
+              <label class="feature-chip">
+                <input type="checkbox" value="25000" data-feat="perf-seo">
+                <span class="chip-content">99+ Core Web Vitals Polish (+₹25k)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3: Estimated Output Summary Card -->
+          <div class="estimator-summary-box">
+            <div class="summary-left">
+              <span class="sum-label">Estimated Investment Range (₹ INR)</span>
+              <div class="sum-price" id="estPriceDisplay">₹1,75,000 &ndash; ₹2,20,000</div>
+              <span class="sum-timeline" id="estTimelineDisplay">Estimated Delivery: 4 &ndash; 6 Weeks</span>
+            </div>
+            <div class="summary-right">
+              <button type="button" class="btn btn-primary" id="applyEstimateBtn">
+                Apply to Project Brief &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ABOUT SECTION -->
     <section class="section about-section" id="about">
@@ -520,34 +736,34 @@
         <div class="about-grid">
           <div class="about-content">
             <div class="badge">Who We Are</div>
-            <h2 class="section-title">We craft digital realities with engineering rigour</h2>
+            <h2 class="section-title">An independent studio built on radical craft & zero bloat</h2>
             <p class="about-lead">
-              Founded in 2023, Nova Studio was created on a single belief: digital software should be visually stunning without sacrificing structural speed, accessibility, or maintainability.
+              Founded by Kingson Israel, Nova Studio was created to eliminate the traditional agency runaround: bloated project management, outsourced junior contractors, and sluggish delivery.
             </p>
             <p class="about-text">
-              We operate as a high-caliber multidisciplinary squad of senior engineers, product designers, and brand strategists. Rather than bloated teams and bureaucratic sprints, we work directly with founders and product leaders to ship impactful digital products in record time.
+              We operate as a high-density creative engineering unit. When you partner with us, you work directly with senior architects who write production code, design responsive layouts, and optimize infrastructure.
             </p>
 
             <div class="values-list">
               <div class="value-item">
                 <div class="value-icon">&#10024;</div>
                 <div>
-                  <h4 class="value-title">Obsessive Polish</h4>
-                  <p class="value-desc">Every pixel, typography scale, and easing curve is calibrated for aesthetic distinction.</p>
+                  <h4 class="value-title">Obsessive Visual Polish</h4>
+                  <p class="value-desc">Every pixel, typography scale, and fluid animation curve is calibrated for aesthetic impact.</p>
                 </div>
               </div>
               <div class="value-item">
                 <div class="value-icon">&#9889;</div>
                 <div>
-                  <h4 class="value-title">Zero Friction Speed</h4>
-                  <p class="value-desc">Modular, clean codebases designed for effortless maintenance, scale, and longevity.</p>
+                  <h4 class="value-title">Speed as a Competitive Feature</h4>
+                  <p class="value-desc">Sub-second page loads, instant interaction response (&lt;30ms), and rapid 4-week MVP cycles.</p>
                 </div>
               </div>
               <div class="value-item">
                 <div class="value-icon">&#128274;</div>
                 <div>
-                  <h4 class="value-title">Accessible by Default</h4>
-                  <p class="value-desc">Inclusive design conforming with WCAG AA/AAA guidelines across devices and viewports.</p>
+                  <h4 class="value-title">Direct Principal Partnership</h4>
+                  <p class="value-desc">Direct Slack channel, weekly staging deployments, and complete transparent communication.</p>
                 </div>
               </div>
             </div>
@@ -557,23 +773,23 @@
           <div class="about-stats-container">
             <div class="about-card-stat">
               <span class="stat-highlight">100%</span>
-              <span class="stat-title">In-House Craft</span>
-              <p class="stat-detail">No outsourcing or white-label contractors. You collaborate straight with senior builders.</p>
+              <span class="stat-title">In-House Engineering</span>
+              <p class="stat-detail">Zero outsourcing or offshore contractors. Every line of code is handwritten with care.</p>
             </div>
             <div class="about-card-stat">
               <span class="stat-highlight">4.9/5</span>
               <span class="stat-title">Client Satisfaction</span>
-              <p class="stat-detail">Over 40+ long-term agency and scale-up partner relationships across the globe.</p>
+              <p class="stat-detail">Over 48+ successful engagements spanning Silicon Valley to European fintech.</p>
             </div>
             <div class="about-card-stat">
               <span class="stat-highlight">&lt; 30ms</span>
               <span class="stat-title">Interaction Budgets</span>
-              <p class="stat-detail">Fluid responsiveness and zero jank on all user interactions and micro-animations.</p>
+              <p class="stat-detail">Fluid responsiveness and zero UI stutter across high-density interactive elements.</p>
             </div>
             <div class="about-card-stat highlight-teal">
               <span class="stat-highlight">4 Weeks</span>
-              <span class="stat-title">Average MVP Delivery</span>
-              <p class="stat-detail">From greenfield concept to production-ready deployed MVP in record time.</p>
+              <span class="stat-title">Average MVP Sprint</span>
+              <p class="stat-detail">From greenfield requirements to production deployment in rapid milestones.</p>
             </div>
           </div>
         </div>
@@ -594,30 +810,30 @@
         <div class="process-steps">
           <div class="process-step">
             <div class="step-badge">01</div>
-            <h3 class="step-title">Discovery & Strategy</h3>
+            <h3 class="step-title">Discovery & Architecture</h3>
             <p class="step-desc">
-              We audit your market landscape, target personas, technical requirements, and core KPIs to shape a unified roadmap.
+              We audit your market landscape, technical requirements, and core KPIs to shape a unified architectural roadmap.
             </p>
           </div>
           <div class="process-step">
             <div class="step-badge">02</div>
             <h3 class="step-title">Design & Prototyping</h3>
             <p class="step-desc">
-              Rapid wireframing, high-fidelity visual mockups, and clickable prototypes to test user flows before writing production code.
+              High-fidelity interactive visual prototypes in Figma to test navigation flows and user experience before coding.
             </p>
           </div>
           <div class="process-step">
             <div class="step-badge">03</div>
             <h3 class="step-title">Agile Engineering</h3>
             <p class="step-desc">
-              Full-stack implementation using modern clean code patterns, continuous integration, unit testing, and weekly staging previews.
+              Full-stack implementation using modern clean code patterns, continuous integration, and weekly staging previews.
             </p>
           </div>
           <div class="process-step">
             <div class="step-badge">04</div>
-            <h3 class="step-title">Launch & Scale</h3>
+            <h3 class="step-title">Launch, Telemetry & Handover</h3>
             <p class="step-desc">
-              Lighthouse optimization, DNS and SSL configuration, analytics wiring, comprehensive handover, and post-launch tuning.
+              Core Web Vitals tuning, DNS/SSL setup, analytics wiring, comprehensive codebase walkthrough, and documentation.
             </p>
           </div>
         </div>
@@ -628,9 +844,9 @@
     <section class="section faq-section" id="faq">
       <div class="container max-w-narrow">
         <div class="section-header text-center">
-          <div class="badge">Common Questions</div>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-subtitle">Everything you need to know about working with Nova Studio.</p>
+          <div class="badge">Frequently Answered</div>
+          <h2 class="section-title">Everything you need to know about partnering with us</h2>
+          <p class="section-subtitle">Straightforward answers about our collaboration model, timelines, and deliverables.</p>
         </div>
 
         <div class="faq-accordion" id="faqAccordion">
@@ -648,12 +864,12 @@
 
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>How do you handle backend integrations for websites?</span>
+              <span>How are contact messages handled on this site?</span>
               <span class="faq-chevron" aria-hidden="true">+</span>
             </button>
             <div class="faq-panel">
               <div class="faq-panel-inner">
-                We build headless and full-stack solutions. For static sites and marketing platforms, we seamlessly wire forms and dynamic data to serverless services (Formspree, Resend, Supabase, Firebase) or custom Node/Python REST/GraphQL APIs.
+                Submissions from our contact form are routed in real time directly to our principal developer inbox at <strong>jkingsonisrael@gmail.com</strong> with guaranteed 24 business hours response time.
               </div>
             </div>
           </div>
@@ -672,12 +888,12 @@
 
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>Will our in-house team be able to maintain the code?</span>
+              <span>Will our in-house team own the full code?</span>
               <span class="faq-chevron" aria-hidden="true">+</span>
             </button>
             <div class="faq-panel">
               <div class="faq-panel-inner">
-                Absolutely. We maintain clean folder architecture, semantic markup, zero undocumented magic, comprehensive README guides, and structured code comments so any developer can immediately step in.
+                100% yes. Upon project completion and milestone settlement, you own full intellectual property rights, repository access, design tokens, and production assets.
               </div>
             </div>
           </div>
@@ -699,7 +915,7 @@
 
             <div class="contact-details">
               <div class="contact-detail-item">
-                <div class="detail-icon">
+                <div class="detail-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
@@ -707,25 +923,30 @@
                 </div>
                 <div>
                   <span class="detail-label">Direct Inquiries</span>
-                  <a href="mailto:jkingsonisrael@gmail.com" class="detail-val">jkingsonisrael@gmail.com</a>
+                  <div class="copy-email-group">
+                    <a href="mailto:jkingsonisrael@gmail.com" class="detail-val" id="primaryEmailLink">jkingsonisrael@gmail.com</a>
+                    <button type="button" class="btn-copy-email" id="copyEmailBtn" title="Copy email address to clipboard" aria-label="Copy email address">
+                      📋 Copy
+                    </button>
+                  </div>
                 </div>
               </div>
 
               <div class="contact-detail-item">
-                <div class="detail-icon">
+                <div class="detail-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10"></circle>
                     <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
                 </div>
                 <div>
-                  <span class="detail-label">Response Time</span>
-                  <span class="detail-val">Guaranteed within 24 business hours</span>
+                  <span class="detail-label">Guaranteed SLA</span>
+                  <span class="detail-val">Direct response within 24 business hours</span>
                 </div>
               </div>
 
               <div class="contact-detail-item">
-                <div class="detail-icon">
+                <div class="detail-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
@@ -742,7 +963,7 @@
             <div class="integration-notice">
               <div class="notice-icon">&#10003;</div>
               <p class="notice-text">
-                <strong>Real-Time Delivery:</strong> Inquiries submitted here are dispatched in real time to <a href="mailto:jkingsonisrael@gmail.com" style="color: var(--teal-neon); text-decoration: underline;">jkingsonisrael@gmail.com</a> with immediate triage.
+                <strong>Real-Time Delivery Active:</strong> Inquiries submitted through this portal are dispatched in real time directly to <a href="mailto:jkingsonisrael@gmail.com" style="color: var(--teal-neon); text-decoration: underline;">jkingsonisrael@gmail.com</a> with immediate triage.
               </p>
             </div>
           </div>
@@ -785,11 +1006,11 @@
                 <div class="form-group">
                   <label for="budget" class="form-label">Estimated Budget</label>
                   <select id="budget" name="budget" class="form-select">
-                    <option value="" disabled selected>Select anticipated range</option>
-                    <option value="10k-25k">$10k &ndash; $25k</option>
-                    <option value="25k-50k">$25k &ndash; $50k</option>
-                    <option value="50k-100k">$50k &ndash; $100k</option>
-                    <option value="100k+">$100k+</option>
+                    <option value="" disabled selected>Select anticipated range (₹ INR)</option>
+                    <option value="25k-75k">₹25,000 &ndash; ₹75,000</option>
+                    <option value="75k-1.5L">₹75,000 &ndash; ₹1,50,000</option>
+                    <option value="1.5L-3.5L">₹1,50,000 &ndash; ₹3,50,000</option>
+                    <option value="3.5L+">₹3,50,000+</option>
                   </select>
                 </div>
               </div>
@@ -805,14 +1026,14 @@
 
               <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
                 <span class="btn-text-default">Send Project Brief</span>
-                <span class="btn-text-loading hidden">Sending Brief...</span>
-                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                <span class="btn-text-loading hidden">Dispatching in Real Time...</span>
+                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
                   <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
                 </svg>
               </button>
 
               <p class="form-privacy">
-                We respect your confidentiality. We will never share your information or send spam.
+                Direct transmission to <strong>jkingsonisrael@gmail.com</strong>. We respect your confidentiality and never share data.
               </p>
             </form>
           </div>
@@ -837,7 +1058,7 @@
             <span class="logo-text">Nova<span class="text-accent">Studio</span></span>
           </a>
           <p class="footer-tagline">
-            Next-generation digital product engineering and brand systems studio. Built with precision for ambitious brands.
+            Next-generation digital product engineering and brand systems studio led by Kingson Israel. Crafted with precision for ambitious brands.
           </p>
           <div class="social-links" aria-label="Social Media Links">
             <a href="https://github.com/kingson-starboy" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Nova Studio on GitHub">
@@ -849,8 +1070,8 @@
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Nova Studio on X / Twitter">
               <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Nova Studio on Dribbble">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm10.138 10.742c-.223-.034-2.456-.372-4.908.435-.349-.801-.728-1.595-1.134-2.373 2.164-1.137 3.96-2.614 4.168-2.791 1.171 1.339 1.874 3.09 1.874 4.729zm-3.344-6.079c-.214.179-1.897 1.545-3.992 2.62-1.39-2.502-2.946-4.593-3.076-4.767 1.954-.783 4.164-.693 7.068 2.147zm-8.895-2.222c.137.181 1.71 2.288 3.097 4.809-2.88 1.01-5.836 1.157-6.22 1.172.906-2.585 2.871-4.664 5.377-5.981zm-6.073 7.423c.361-.013 3.528-.157 6.643-1.285.385.736.744 1.488 1.077 2.247-3.957 1.353-7.514 4.298-7.72 4.471-.444-1.637-.687-3.411-.687-5.433zm3.033 11.233c.189-.157 3.398-2.791 7.273-4.045 1.065 2.684 1.554 5.253 1.634 5.719-3.418 1.258-6.945-.292-8.907-1.674zm10.36 1.096c-.08-.432-.544-2.878-1.564-5.467 2.261-.837 4.269-.516 4.494-.477-.282 2.456-1.355 4.582-2.93 5.944z"/></svg>
+            <a href="mailto:jkingsonisrael@gmail.com" class="social-btn" aria-label="Direct Email to Kingson Israel">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </a>
           </div>
         </div>
@@ -859,8 +1080,9 @@
           <h4 class="footer-heading">Navigation</h4>
           <ul class="footer-menu">
             <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Work</a></li>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="#projects">Selected Work</a></li>
+            <li><a href="#estimator">Scope Estimator</a></li>
             <li><a href="#about">About Studio</a></li>
             <li><a href="#process">Our Process</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -868,21 +1090,21 @@
         </div>
 
         <div class="footer-links-col">
-          <h4 class="footer-heading">Services</h4>
+          <h4 class="footer-heading">Capabilities</h4>
           <ul class="footer-menu">
-            <li><a href="#services">Web Engineering</a></li>
-            <li><a href="#services">UI/UX Design</a></li>
-            <li><a href="#services">Design Systems</a></li>
-            <li><a href="#services">Performance & SEO</a></li>
-            <li><a href="#services">AI Integrations</a></li>
-            <li><a href="#services">Mobile Optimization</a></li>
+            <li><a href="#capabilities">Web Engineering</a></li>
+            <li><a href="#capabilities">UI/UX Design</a></li>
+            <li><a href="#capabilities">Design Systems</a></li>
+            <li><a href="#capabilities">Performance & SEO</a></li>
+            <li><a href="#capabilities">AI Integrations</a></li>
+            <li><a href="#capabilities">Mobile Optimization</a></li>
           </ul>
         </div>
 
         <div class="footer-newsletter-col">
           <h4 class="footer-heading">Studio Dispatch</h4>
           <p class="newsletter-desc">
-            Curated insights on web performance, modern typography, and emerging UI paradigms. Sent bi-weekly.
+            Curated engineering notes on performance, interaction design, and systems architecture.
           </p>
           <form class="newsletter-form" id="newsletterForm" novalidate>
             <div class="newsletter-input-wrap">
@@ -900,7 +1122,7 @@
 
       <div class="footer-bottom">
         <div class="footer-bottom-copy">
-          &copy; <span id="yearSpan">2026</span> Nova Studio LLC. All rights reserved. Built with precision & craft.
+          &copy; <span id="yearSpan">2026</span> Nova Studio LLC &middot; Founded by Kingson Israel. All rights reserved.
         </div>
         <div class="footer-bottom-links">
           <button type="button" class="policy-link-btn" data-policy="privacy">Privacy Policy</button>

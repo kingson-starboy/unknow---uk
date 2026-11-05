@@ -1,0 +1,19 @@
+{
+  "name": "nova-studio-backend",
+  "version": "1.0.0",
+  "description": "Nova Studio direct email dispatch backend for jkingsonisrael@gmail.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["portfolio", "email", "backend", "express", "nodemailer"],
+  "author": "Kingson Israel <jkingsonisrael@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13"
+  }
+}
