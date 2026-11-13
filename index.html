@@ -13,6 +13,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fail-Safe Layout Styles (Guarantees single horizontal row alignment & no word wrapping) -->
+  <style>
+    .header-container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      flex-wrap: nowrap !important;
+      gap: 16px !important;
+    }
+    .brand-logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      gap: 10px !important;
+      text-decoration: none !important;
+    }
+    .logo-text {
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      line-height: 1 !important;
+    }
+    .nav-menu {
+      display: flex !important;
+      align-items: center !important;
+      flex-shrink: 1 !important;
+    }
+    .nav-list {
+      display: flex !important;
+      align-items: center !important;
+      gap: clamp(12px, 1.8vw, 28px) !important;
+      white-space: nowrap !important;
+    }
+    .nav-link {
+      white-space: nowrap !important;
+    }
+    .header-actions {
+      display: flex !important;
+      align-items: center !important;
+      flex-shrink: 0 !important;
+    }
+    @media (max-width: 960px) {
+      .nav-menu, .header-cta {
+        display: none !important;
+      }
+      .mobile-toggle {
+        display: flex !important;
+      }
+    }
+  </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%230b0f19'/><path d='M16 6 L22 16 L16 26 L10 16 Z' fill='%238B5CF6'/><circle cx='16' cy='16' r='4' fill='%2300F2FE'/></svg>">
 </head>
 <body>

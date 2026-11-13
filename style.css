@@ -390,16 +390,29 @@ img, svg {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-main);
   letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo-text {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
 }
 
 .logo-symbol {
@@ -414,12 +427,14 @@ img, svg {
 .nav-menu {
   display: flex;
   align-items: center;
+  flex-shrink: 1;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(14px, 2vw, 28px);
+  white-space: nowrap;
 }
 
 .nav-link {
@@ -429,6 +444,7 @@ img, svg {
   position: relative;
   padding: 6px 0;
   transition: color var(--transition-fast);
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -455,6 +471,7 @@ img, svg {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 }
 
 /* Mobile Hamburger Toggle */
@@ -2179,11 +2196,11 @@ img, svg {
   }
 }
 
-/* Tablets (<= 768px) */
-@media (max-width: 768px) {
+/* Tablets & Medium Screens (<= 960px) */
+@media (max-width: 960px) {
   .section {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 54px;
+    padding-bottom: 54px;
   }
 
   .nav-menu, .header-cta {
