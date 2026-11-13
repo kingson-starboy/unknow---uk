@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Nova Studio — Main Stylesheet
+   King Studio Home — Main Stylesheet
    Design Language: Dark Navy (#080C16), Purple Accents (#8B5CF6), Teal Highlights (#00F2FE)
    ========================================================================== */
 
@@ -190,6 +190,7 @@ img, svg {
 
 /* --- Ambient Glow Elements --- */
 .ambient-glow {
+  display: none !important;
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
